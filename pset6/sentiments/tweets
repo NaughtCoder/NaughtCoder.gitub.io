@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+from analyzer import Analyzer
+from helpers import get_user_timeline
+
+def main():
+
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets @screen_name")
+
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+    analyzer = Analyzer(positives, negatives)
+
+
+    tweets = get_user_timeline(sys.argv[1], count=50)
+    if tweets is None:
+        sys.exit("Screen_name does not exist or it's private")
+
+    for tweet in tweets:
+        score = analyzer.analyze(tweet)
+        if score > 0:
+            print("\033[32m" + str(score), tweet + "\033[0m")
+        elif score < 0:
+            print("\033[31m" + str(score), tweet + "\033[0m")
+        else:
+            print("\033[33m" + str(score), tweet + "\033[0m")
+
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,9 @@
+0.  pneumonoultramicroscopicsilicovolcanoconiosis is an ivented LONG word that describes a lung disease and is word in the dictionary/large
+1.  rusage returns the resource usages
+2.  struct rusage has 16 members
+3.  because the man page specifies so
+4.  you iterate through the file text one character at time, allowing for only alphabetical characters and aprotrophes. Disregarding numbers, and checking
+    that the length of the world does not exceed 45. If a number is found in the word it disregards the whole word entirely.
+5.  fscanf is oblivious to white space characters('\n','\t',' ')
+6.  const means a read only data type, one cannot change its value. Hence, loading and checking does not require us to change any values because we are merely reading the contents
+    for each function

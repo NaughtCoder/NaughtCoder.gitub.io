@@ -1,0 +1,27 @@
+1.  stdint.h is a c programming library that provides you with the flexibility of managing the size of your data types
+
+2.  to manage the exact size of a data you want for example, a byte has 256 values so we assign it the uint8_t data type which,
+    coincidentally, although most likely not, can store up to 256 values.
+
+3.  uint8_t = 1 byte, uint16_t = 2 bytes, unint32_t and int32_t both = 4 bytes.
+
+4.  The first two bytes of a BMP file needs to correspond to the letters BM, which,
+    in hexadecimal is the equivalent of 42(66) and 4d(73)
+
+5.  bfsize is the size of the BMP and bisize is the size of its structure
+
+6.  A negative bitheight value indicates that the bitmap is top-down with the originating corner being the top-left.
+    A positive value indicates that the BMP is bottom-up
+
+7.  In the BITMAPINFOHEADER struct, the biBitCount field specifies the BMP color depth(amount of bits per pixel)
+
+8.  fopen may return NULL on line 24 and 32 in copy.c if the pointer points to null, that is, if memory is not set for the pointer
+
+9.  The third arugment in fread is equal to zero becuase we only want to read it once
+
+10. if bi.width is 3 then the assigned padding value is 1
+
+11. fseek sets the file position given an offset
+
+12. SEEK_CUR in fseek sets the file position by the given offset from its current position of the file pointer
+    while SEEK_SET is beggining of the file and SEEK_END is the end of the file
